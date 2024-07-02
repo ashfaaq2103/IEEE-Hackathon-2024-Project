@@ -9,4 +9,18 @@ function MenuButton()
     {
         element.style.display = "inline-block"; 
     } 
+
 }
+
+function MenuButtonResize()
+{
+    var element = document.getElementById("dropdown_container")
+    if (window.innerWidth > 800)
+    {
+        element.style.display = "none"; 
+    }
+}
+
+window.addEventListener('resize', function() {
+    MenuButtonResize();
+});
