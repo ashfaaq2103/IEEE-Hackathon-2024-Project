@@ -12,20 +12,44 @@ const config = {
 };
 
 async function connectToDatabase() {
+    let pool;
     try {
-        // Make sure to await this connection to be established
-        await sql.connect(config);
+        // Establish connection
+        pool = await sql.connect(config);
         console.log('Connected to SQL Server');
 
-        // Example query
-        const result = await sql.query`select * from your_table`;
-        console.log(result);
-
+        // Call createTable() after connection is established
+        await createTable(pool);
     } catch (err) {
         console.error('Error connecting to SQL Server:', err);
     } finally {
         // Close the connection pool
-        await sql.close();
+        if (pool) await pool.close();
+        console.log('Connection closed');
+    }
+}
+
+async function createTable(pool) {
+    try {
+        const request = pool.request();
+
+        // SQL command to create a new table
+        const query = `
+            CREATE TABLE test_table (
+                Id INT IDENTITY(1,1) PRIMARY KEY,
+                Name NVARCHAR(100) NOT NULL,
+                Age INT NULL,
+                Email NVARCHAR(255) NOT NULL UNIQUE,
+                CreatedAt DATETIME DEFAULT GETDATE()
+            )
+        `;
+
+        // Execute the query
+        const result = await request.query(query);
+        console.log('Table created successfully:', result);
+
+    } catch (err) {
+        console.error('Error creating table:', err);
     }
 }
 
