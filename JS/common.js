@@ -9,8 +9,8 @@ function MenuButton()
     {
         element.style.display = "inline-block"; 
     } 
-
 }
+
 
 function MenuButtonResize()
 {
