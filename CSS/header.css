@@ -31,6 +31,7 @@ body {
 
 /* Sticky header */
 .header-outer {
+	z-index: 3;
 	/* Make it stick */
 	height: var(--header-outer-height);
 	position: sticky;
@@ -51,7 +52,7 @@ body {
 	height: var(--header-inner-height);
 	position: sticky;
 	top: 0;
-
+	
 	/* Other */
 	display: flex;
 	align-items: center;
@@ -128,6 +129,7 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
+	box-shadow: 5px 5px 5px black;
     z-index: 1;
     margin-left: 80%;
     margin-top: 25%;
@@ -137,7 +139,7 @@ body {
     list-style: none;
     padding: 5px 30px;
     text-align: left; 
-    z-index: 3;
+    z-index: 5;
   }
 
   ul li a
