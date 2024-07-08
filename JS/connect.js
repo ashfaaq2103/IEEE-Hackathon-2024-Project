@@ -4,10 +4,10 @@ const config = {
     user: 'rootadmin',
     password: '70Leo"3878',
     server: 'anonymous.database.windows.net',
-    database: 'anonymous',
+    database: 'anonymous_v2',
     options: {
-        encrypt: true, // Use encryption
-        trustServerCertificate: false // Change to true if you're connecting to a local dev server
+        encrypt: true, 
+        trustServerCertificate: false 
     }
 };
 
