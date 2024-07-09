@@ -1,0 +1,60 @@
+#rotate_card {
+    --front-bg-color: #6A2C70;
+    --back-bg-color: #F08A5D;
+    --front-border-color: #6A2C70;
+    --back-border-color: #F08A5D;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 20px; /* Margin around the card */
+}
+
+#rotate_card .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+}
+
+#rotate_card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+#rotate_card .card-front,
+#rotate_card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 20px; /* Padding inside the card */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+#rotate_card .card-front {
+    background-color: var(--front-bg-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid var(--front-border-color);
+    border-radius: 10px;
+    font-size: 24px;
+    transform: rotateY(0deg);
+    text-align: center;
+    flex-direction: column; /* Ensure content stacks vertically */
+}
+
+#rotate_card .card-back {
+    background-color: var(--back-bg-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid var(--back-border-color);
+    border-radius: 10px;
+    font-size: 24px;
+    transform: rotateY(180deg);
+    text-align: center;
+    flex-direction: column; /* Ensure content stacks vertically */
+}
