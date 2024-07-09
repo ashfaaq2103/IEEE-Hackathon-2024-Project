@@ -1,56 +1,49 @@
+// This file will be used for the node js server. Express will be used to set data from the different tables. 
 const sql = require('mssql');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.json());
+app.use(cors());
+
+// SQL Server connection configuration
 const config = {
     user: 'rootadmin',
     password: '70Leo"3878',
     server: 'anonymous.database.windows.net',
-    database: 'anonymous',
+    database: 'anonymous_v2',
     options: {
-        encrypt: true, // Use encryption
-        trustServerCertificate: false // Change to true if you're connecting to a local dev server
+        encrypt: true, 
+        trustServerCertificate: false 
     }
 };
 
-async function connectToDatabase() {
-    let pool;
-    try {
-        // Establish connection
-        pool = await sql.connect(config);
+// Connect to SQL Server
+sql.connect(config).then(pool => {
+    if (pool.connected) {
         console.log('Connected to SQL Server');
-
-        // Call createTable() after connection is established
-        await createTable(pool);
-    } catch (err) {
-        console.error('Error connecting to SQL Server:', err);
-    } finally {
-        // Close the connection pool
-        if (pool) await pool.close();
-        console.log('Connection closed');
     }
-}
 
-async function createTable(pool) {
-    try {
-        const request = pool.request();
+    // Define route to get data
+    app.get('/api/data', async (req, res) => {
+        try {
+            const result = await pool.request().query('SELECT * FROM test_table');
+            res.json(result.recordset);
+        } catch (err) {
+            console.error('Error executing query:', err);
+            res.status(500).send('Error executing query');
+        }
+    });
 
-        // SQL command to create a new table
-        const query = `
-            CREATE TABLE test_table (
-                Id INT IDENTITY(1,1) PRIMARY KEY,
-                Name NVARCHAR(100) NOT NULL,
-                Age INT NULL,
-                Email NVARCHAR(255) NOT NULL UNIQUE,
-                CreatedAt DATETIME DEFAULT GETDATE()
-            )
-        `;
+    // Start the server
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+}).catch(err => {
+    console.error('Error connecting to SQL Server:', err);
+});
 
-        // Execute the query
-        const result = await request.query(query);
-        console.log('Table created successfully:', result);
-
-    } catch (err) {
-        console.error('Error creating table:', err);
-    }
-}
-
-connectToDatabase();
