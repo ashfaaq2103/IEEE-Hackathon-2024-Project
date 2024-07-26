@@ -2,39 +2,19 @@
 <html>
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="./CSS/header.css" type="text/css" rel="stylesheet">
-	<link href="./CSS/footer.css" type="text/css" rel="stylesheet">
 	<link href="./CSS/style.css" type="text/css" rel="stylesheet">
-	<link href="./CSS/login.css" type="text/css" rel="stylesheet">
 	<script src="./JS/common.js"></script>
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<!-- Sticky header -->
-	<header class="header-outer">
-		<div class="header-inner responsive-wrapper">
-			<div class="header-logo">
-				<img src="./Assets/Anonymous.png" />
-			</div>
-			<nav class="header-navigation">
-				<a href="index.html">Home</a>
-				<a href="#">About us</a>
-				<a href="SignIn.html">Sign In</a>
-				<button onclick="MenuButton()">Menu</button>
-			</nav>	
-		</div>
-		<div class="dropdown-container" id="dropdown_container">
-			<ul class="dropdown">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#">About us</a></li>
-				<li><a href="SignIn.html">Sign In</a></li>
-			</ul>
-		</div>
-
-	</header>
+	<div id="header_container"></div>
 	</head>
 
 	<body>
+        <div class="loader-container">
+			<div class="loader"></div>
+			<div class="loader-text">Loading...</div>
+		  </div>
         <div class="space"></div>
 		<div class="log-sign">
             <!-- Creating a hidden checkbox-->
@@ -61,13 +41,17 @@
                         <input type="email" placeholder="Email" id="emails" onkeyup= "checkemail()" required />
                     </div>
 
+
                      <!-- input values for fields-->
-                    <div class="nextline" id="cstren">
-                        <input type="password" placeholder="Password" id="password" required onkeyup="checkPass()" />
-                        <span id="strength" class="stren">
-                            <p for="password"></p>
-                        </span>
-                    </div>
+					 <div class="group" id="custom_input">
+						<input type="password" class="input" id="password" placeholder="Password" required onkeyup="checkPass()" />
+						<span id="strength" class="icon">
+							<svg stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linejoin="round" stroke-linecap="round"></path>
+							</svg>
+						</span>
+					</div>
+					
                     <div class="nextline">
                         <input id="cpassword" type="password" placeholder="Confirm password" required onkeyup="checkPass()" />
                     </div>
@@ -78,34 +62,11 @@
                 </form>
             </div>
         </div>
-        
+        <div id="footer_container"></div>
 
         <!-- calling javascript file -->
+		 <script src="./js/load _header_and_footer.js"></script>
         <script src="./js/login.js"></script>
+        <script src="./JS/loader.js"></script>
 	</body>
-
-	<footer class="footer">
-		<ul class="social-icon">
-		  <li class="social-icon__item"><a class="social-icon__link" href="#">
-			  <ion-icon name="logo-facebook"></ion-icon>
-			</a></li>
-		  <li class="social-icon__item"><a class="social-icon__link" href="#">
-			  <ion-icon name="logo-twitter"></ion-icon>
-			</a></li>
-		  <li class="social-icon__item"><a class="social-icon__link" href="#">
-			  <ion-icon name="logo-linkedin"></ion-icon>
-			</a></li>
-		  <li class="social-icon__item"><a class="social-icon__link" href="#">
-			  <ion-icon name="logo-instagram"></ion-icon>
-			</a></li>
-		</ul>
-		<ul class="menu">
-		  <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-		  <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-		  <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-	
-		</ul>
-		<p>&copy;Developed by the Anonymous team | MDXTHON 2024</p>
-	  </footer>
-
 </html>
