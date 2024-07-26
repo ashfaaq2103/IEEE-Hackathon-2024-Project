@@ -38,8 +38,7 @@ async function createTable(pool) {
         // SQL command to create a new table
         const query = `
             CREATE TABLE user_info (
-            id INT PRIMARY KEY,
-            Email VARCHAR(255) NOT NULL UNIQUE,
+            Email VARCHAR(255) NOT NULL PRIMARY KEY,
             Password VARCHAR(255) NOT NULL
         )
         `;

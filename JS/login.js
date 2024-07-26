@@ -1,3 +1,4 @@
+
 // declaration of global variable to be used in multiple functions 
 let pwd = document.getElementById("password");
 let stren = document.getElementById("cstren");
@@ -100,173 +101,93 @@ function Signup()
     let ConfirmPassword = document.getElementById("cpassword").value;
 
     //Store user if no field is empty 
-    if ((email != "") && (password != "") && (ConfirmPassword != ""))
-    {
-        fetch('http://localhost:3000/api/SendData', {
+    if ((email != "") && (password != "") && (ConfirmPassword != "")) {
+        fetch('http://localhost:3000/api/checkEmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.exists) {
+                Swal.fire({
+                    title: "Error",
+                    text: "Email already exists. Please Log In.",
+                    icon: "error"
+                });
+            } else {
+                fetch('http://localhost:3000/api/SendData', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if (data == "Data inserted successfully") {
+                        Swal.fire({
+                            title: "Success",
+                            text: "You have successfully signed in.",
+                            icon: "success"
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Error",
+                            text: "There was an error when creating your account.",
+                            icon: "error"
+                        });
+                    }
+                    console.log(data);
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    
+        check.innerHTML = '<input id="inputBt" class="input-btn-sign" onclick="Signup()" type="submit" value="Signup" />';
+    }
+    
+}
+
+function log(event) {
+    event.preventDefault(); // Prevent the default form submission
+    let email = document.getElementById("logUsernme").value;
+    let password = document.getElementById("logPasswd").value;
+    if (email !== "" && password !== "") {
+        fetch('http://localhost:3000/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ email, password })
         })
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
-            if (data == "Table created or already exists")
-                {
-                    Swal.fire({
-                        title: "Success",
-                        text: "You have sucessfully signed in.",
-                        icon: "success"
-                      });
-                }
-                else
-                {
-                    Swal.fire({
-                        title: "Error",
-                        text: "There was an error when creating your account.", 
-                        icon: "error"
-                      });
-                }
-                console.log(data); 
-            ;
+            if (data.success) {
+                Swal.fire({
+                    title: "Success",
+                    text: "You have successfully logged in.",
+                    icon: "success"
+                });
+            } else {
+                Swal.fire({
+                    title: "Error",
+                    text: data.message,
+                    icon: "error"
+                });
+            }
+            
         })
         .catch(error => console.error('Error:', error));
-
-        check.innerHTML ='<input id="inputBt" class="input-btn-sign" onclick="Signup()" type="submit" value="Signup" />';
-    }
-    
-}
-
-//checks if username is already present in local storage 
-function checkusrname()
-{
-    //get username written by user 
-    let usrname = document.getElementById("username").value;
-    // checks if user is present
-    if(localStorage[usrname] != undefined){
-        //if so, checks if signup button is present, if yes, remove it 
-        if (document.getElementById("inputBt") !== null)
-        {
-            document.getElementById("inputBt").remove();
-        }
-        //display error message 
-        check.innerHTML ='<span class="checkText">Username is already taken<br>Enter another one</span>';
-        return; //Do nothing else
-    }
-    if((localStorage[usrname] === undefined) && (check.innerHTML ='<span class="checkText">Username is already taken<br>Enter another one</span>')){
-        //Inform user that they do not have an account
-        check.innerHTML ='<input id="inputBt" class="input-btn-sign" onclick="Signup()" type="submit" value="Signup" />';
+    } else {
+        Swal.fire({
+            title: "Error",
+            text: "Email and password must not be empty.",
+            icon: "error"
+        });
     }
 }
 
-// function to remove login button if it is present 
-function removeLogBtn()
-{
-    if (document.getElementById("btnLog") !== null)
-        {
-            document.getElementById("btnLog").remove();
-        }
-}
-
-function checkemail()
-{   
-    // create empty array and create an array of keys
-    let emailarray = [];
-    let userarray = (Object.keys(localStorage));
-    // iterates through array of keys 
-    for(let i=0; i < userarray.length; i++){
-        let usernme = userarray[i]; 
-        let usrObj = JSON.parse(localStorage[usernme]);//Convert to object
-        // populate email array 
-        emailarray.push(usrObj.email);
-    }
-    // iterates through all the keys 
-    for(let i=0; i < userarray.length; i++){
-        //compare email written to email already stored  
-        if (mail.value == emailarray[i])
-        {
-            // if so, remove login button and display error message and breaks out of function 
-            if (document.getElementById("inputBt") !== null)
-            {
-                document.getElementById("inputBt").remove();
-            }
-            check.innerHTML ='<span class="checkText">Email assigned to another account<br>Please log-in</span>';
-            break; 
-        }
-        // if email not equal; add signup button back 
-        if (mail.value != emailarray[i])
-        {
-            check.innerHTML ='<input id="inputBt" class="input-btn-sign" onclick="Signup()" type="submit" value="Signup" />';
-        }
-    } 
-}
-
-// function to set popup invisible 
-function closepopup()
-{
-    document.getElementById("popupOpen").style.display = "none";
-}
-
-function checkLog()
-{
-    let userLog = document.getElementById("logUsernme").value;
-    let pwdLog = document.getElementById("logPasswd");
-    let checkLog = document.getElementById("checkLog");
-    let valid = 0; 
-    let userpass = "";
-    // checks if username exists in local storage and check if user is already logged 
-    if(localStorage[userLog] == undefined && validLog == 0){
-        // if false remove login button and display error message 
-        removeLogBtn();
-        checkLog.innerHTML ='<span class="checkText">Username does not exist<br> Please sign up if you do not have an account</span>';
-        valid = 0; 
-    }
-    // if username exists re create login button
-    if(localStorage[userLog] != undefined && validLog == 0){
-        checkLog.innerHTML=' <input id="btnLog" class="input-btn-log" type="submit" onclick="log()" value="Log in">';
-        valid = 1;
-        // gets user password for this user 
-        let usrObj = JSON.parse(localStorage[userLog]);//Convert to object
-        userpass = usrObj.password;
-    }
-    if (valid == 1)
-    {
-        // Checks if password is equal to what the user is typing. if false, display error message else let login button visible 
-        if (pwdLog.value != userpass  && validLog == 0)
-        {
-            removeLogBtn();
-            checkLog.innerHTML ='<span class="checkText">Password is incorrect <br><br></span>';
-            validLog = 0; 
-        }
-        else if (pwdLog.value == userpass && validLog == 0)
-        {
-            checkLog.innerHTML=' <input id="btnLog" class="input-btn-log" type="submit" onclick="log()" value="Log in">';
-            validLog = 1; 
-        }
-    }
-}
-
-
-function log()
-{   
-    //if password and username correct, set log object from false to true in local storage 
-    if (validLog == 1)
-    {
-        let userLog = document.getElementById("logUsernme").value;
-        let usrObj = JSON.parse(localStorage[userLog]);//Convert to object
-        usrObj.log = true; 
-        localStorage.setItem(userLog, JSON.stringify(usrObj));
-    }
-}
-
-// checks if any user has already logged in and if so, remove log in button and display message 
-let userarray = (Object.keys(localStorage));
-    for(let i=0; i < userarray.length; i++){
-        let usernme = userarray[i]; 
-        let usrObj = JSON.parse(localStorage[usernme]);//Convert to object
-        if (usrObj.log == true){
-            removeLogBtn();
-            document.getElementById("checkLog").innerHTML='<span class="checkText">'+usernme+' is logged in<br>Sign out to log in on another account </span>'; 
-            validLog = 1;
-        }
-    }

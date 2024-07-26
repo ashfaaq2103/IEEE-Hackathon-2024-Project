@@ -6,6 +6,7 @@
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<link rel="manifest" href="/Hackathon2024-1/manifest.json">
 	<!-- Sticky header -->
 
 	<body>
@@ -18,8 +19,6 @@
 
 		<div class="toBeDeleted"> </div>
 
-
->
 		<div id ="footer_container"></div>
 
 
@@ -28,7 +27,18 @@
 		  <script src="./JS/loader.js"></script>
 		  <script src="./JS/common.js"></script>
 		  <script src="./JS/load _header_and_footer.js"></script>
-			
+		
+		<script>
+		if('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/Hackathon2024-1/serviceWorker.js', { scope: '/Hackathon2024-1/' })
+		.then(registration => {
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		}).catch(error => {
+			console.log('ServiceWorker registration failed: ', error);
+		});
+}
+		</script>
 	</body>
+
 
 </html>
