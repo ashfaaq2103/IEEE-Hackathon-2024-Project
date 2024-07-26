@@ -1,0 +1,95 @@
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Ensure it stays on top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Use percentage for full viewport width */
+    height: 100%; /* Use percentage for full viewport height */
+    z-index: 9999; /* High value to ensure it's on top */
+    background: rgba(0, 0, 0, 0.8); /* Optional: add a background to cover the page */
+    transition: opacity 1s, visibility 1s; /* Ensure correct spelling of 'visibility' */
+}
+
+.loader {
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+
+.loader:before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 6px solid #007bff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.loader:after {
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: #007bff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: spin 2s linear infinite;
+}
+
+.loader-text {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #007bff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.6);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    display: none;
+}
+
+.loaded .loader-container {
+    display: none;
+}
+
+.loaded .content {
+    display: block;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}

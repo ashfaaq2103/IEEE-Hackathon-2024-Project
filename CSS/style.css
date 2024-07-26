@@ -6,7 +6,16 @@
 @import url('password_box.css');
 @import url('pallette.css');
 @import url('cotainer_split.css');
+@import url('info_wheel.css');
+@import url('loader.css');
 .toBeDeleted
 {
     min-height: 80vh;
+    
+}
+
+body{
+    font-family: sans-serif;
+    margin: 0%;
+    padding: 0%;
 }
