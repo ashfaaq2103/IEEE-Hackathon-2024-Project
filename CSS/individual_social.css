@@ -1,0 +1,89 @@
+.team-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  .team-social-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+  
+  .card {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px rgb(179, 175, 175), 2px 2px 0px rgb(179, 175, 175),
+                3px 3px 0px rgb(179, 175, 175), 4px 4px 0px rgb(179, 175, 175),
+                5px 5px 0px rgb(179, 175, 175);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .card.instagram {
+    border-radius: 90px 5px 5px 5px;
+  }
+  
+  .card.twitter {
+    border-radius: 5px 90px 5px 5px;
+  }
+  
+  .card.github {
+    border-radius: 5px 5px 5px 90px;
+  }
+  
+  .card.discord {
+    border-radius: 5px 5px 90px 5px;
+  }
+  
+  .card.instagram:hover {
+    background-color: #cc39a4;
+    box-shadow: 1px 1px 0px #eeb1de, 2px 2px 0px #d365b6, 3px 3px 0px #d365b6,
+                4px 4px 0px #d365b6, 5px 5px 0px #d365b6;
+  }
+  
+  .card.instagram .icon {
+    fill: #cc39a4;
+  }
+  
+  .card.twitter:hover {
+    background-color: #03a9f4;
+    box-shadow: 1px 1px 0px #a1defa, 2px 2px 0px #41bef8, 3px 3px 0px #41bef8,
+                4px 4px 0px #41bef8, 5px 5px 0px #41bef8;
+  }
+  
+  .card.twitter .icon {
+    fill: #03a9f4;
+  }
+  
+  .card.github:hover {
+    background-color: black;
+    box-shadow: 1px 1px 0px rgb(124, 123, 123), 2px 2px 0px #333, 3px 3px 0px #333,
+                4px 4px 0px #333, 5px 5px 0px #333;
+  }
+  
+  .card.github .icon {
+    fill: black;
+  }
+  
+  .card.discord:hover {
+    background-color: #8c9eff;
+    box-shadow: 1px 1px 0px #bdc2e2, 2px 2px 0px #9ca6e0, 3px 3px 0px #9ca6e0,
+                4px 4px 0px #9ca6e0, 5px 5px 0px #9ca6e0;
+  }
+  
+  .card.discord .icon {
+    fill: #8c9eff;
+  }
+  
