@@ -39,6 +39,22 @@ sql.connect(config).then(pool => {
         }
     });
 
+    // Define route to insert data
+    app.post('/api/SendData', (req, res) => {
+        const { email, password } = req.body;
+        try {
+            const query = 'INSERT INTO user_info (Email, Password) VALUES (@Email, @Password)';
+            pool.request()
+                .input('Email', sql.VarChar, email)
+                .input('Password', sql.VarChar, password)
+                .query(query);
+            res.status(200).send('Data inserted successfully');
+        } catch (err) {
+            console.error('Error executing query:', err);
+            res.status(500).send('Error executing query');
+        }
+    });
+
     // Start the server
     app.listen(port, () => {
         console.log(`Server running on port ${port}`);

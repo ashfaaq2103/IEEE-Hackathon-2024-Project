@@ -95,27 +95,43 @@ function checkPass() {
 
 function Signup()
 {
-    //Build object that we are going to store
-    let usrObject = {};
-    // get current date 
-    const d = new Date();
-    // Add values to object built 
-    usrObject.username = document.getElementById("username").value;
-    usrObject.email = document.getElementById("emails").value;
-    usrObject.gender = document.querySelector('input[name="gender"]:checked').value;
-    usrObject.password = document.getElementById("password").value;
+    let email = document.getElementById("emails").value;
+    let password = document.getElementById("password").value;
     let ConfirmPassword = document.getElementById("cpassword").value;
-    usrObject.DateCreated = d;
-    usrObject.score = 0;
-    usrObject.minutesPlayed = 0;
-    usrObject.log = false;
-
 
     //Store user if no field is empty 
-    if ((usrObject.username != "") && (usrObject.email != "") && (usrObject.password != "") && (ConfirmPassword != ""))
+    if ((email != "") && (password != "") && (ConfirmPassword != ""))
     {
-        localStorage[usrObject.username] = JSON.stringify(usrObject);
-        // set pop up window to visible 
+        fetch('http://localhost:3000/api/SendData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data == "Table created or already exists")
+                {
+                    Swal.fire({
+                        title: "Success",
+                        text: "You have sucessfully signed in.",
+                        icon: "success"
+                      });
+                }
+                else
+                {
+                    Swal.fire({
+                        title: "Error",
+                        text: "There was an error when creating your account.", 
+                        icon: "error"
+                      });
+                }
+                console.log(data); 
+            ;
+        })
+        .catch(error => console.error('Error:', error));
+
         check.innerHTML ='<input id="inputBt" class="input-btn-sign" onclick="Signup()" type="submit" value="Signup" />';
     }
     
