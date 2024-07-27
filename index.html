@@ -6,7 +6,7 @@
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<link rel="manifest" href="/Hackathon2024-1/manifest.json">
+	<link rel="manifest" href="/manifest.json">
 	<!-- Sticky header -->
 
 	<body>
@@ -30,7 +30,7 @@
 		
 		<script>
 		if('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('/Hackathon2024-1/serviceWorker.js', { scope: '/Hackathon2024-1/' })
+		navigator.serviceWorker.register('/JS/serviceWorker.js', { scope: '/' })
 		.then(registration => {
 			console.log('ServiceWorker registration successful with scope: ', registration.scope);
 		}).catch(error => {
