@@ -3,7 +3,7 @@
 .footer {
   position: relative;
   width: 100%;
-  background: #ECF0F1;
+  background: #f6ecdb;
   min-height: 100px;
   bottom: 0;
   padding: 20px 50px;
@@ -12,7 +12,6 @@
   align-items: center;
   flex-direction: column;
   border-top: 1px solid rgb(198, 195, 195);
-  margin-top: -2rem;
 }
 
 .social-icon,
@@ -32,12 +31,13 @@
 
 .menu__link {
   font-size: 1.2rem;
-  color: #104684;
+  color: #01152e;
   font-family: 'Poppins', sans-serif; /* Apply Poppins font */
   margin: 0 10px;
   display: inline-block;
   transition: 0.5s;
   text-decoration: none;
+  opacity: 0.75;
   font-weight: 520;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .footer p {
-  color: #104684;
+  color: rgb(0, 0, 0);
   margin: 15px 0 10px 0;
   font-size: 1rem;
   font-weight: 300;
