@@ -55,6 +55,18 @@ sql.connect(config).then(pool => {
         }
     });
 
+    app.get('/api/SendProductData', async (req, res) => {
+        try {
+            const result = await pool.request().query('SELECT * FROM shopTable');
+            const events = result.recordset;
+            console.log('Events:', events);
+            res.json(events);
+        } catch (err) {
+            console.error('Error executing query:', err);
+            res.status(500).send('Error executing query');
+        }
+    });
+
     // Define route to insert data
     app.post('/api/SendData', async (req, res) => {
         const { email, password } = req.body;
