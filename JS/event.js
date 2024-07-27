@@ -30,7 +30,7 @@ function loadEvents() {
             detailsDiv.className = 'details';
             detailsDiv.innerHTML = `
                 <h3>Where is the event happening?</h3>
-                <p>${event.D}</p>
+                <p>${event.Location}</p>
                 <a href="${event.Link}">View Details</a>
             `;
 

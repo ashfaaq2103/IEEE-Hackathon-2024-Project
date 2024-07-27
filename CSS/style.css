@@ -15,9 +15,10 @@
 
 @import url('background.css');
 @import url('product.css');
+@import url('searchbar.css');
 
 @import url('team.css');
-
+@import url('map.css');
 
 
 body{

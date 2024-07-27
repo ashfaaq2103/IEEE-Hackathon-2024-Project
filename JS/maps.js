@@ -1,64 +1,74 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the map centered on Mauritius
-    const mapOptions = {
-        center: { lat: -20.1607, lng: 57.5037 }, // Center on Mauritius
+let map;
+
+function initMap() {
+    var mapOptions = {
+        center: { lat: -20.293032, lng: 57.714172 },
         zoom: 10
     };
-    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    fetch('http://localhost:3000/api/map')
-        .then(response => response.json())
-        .then(events => {
-            if (events.length > 0) {
-                const bounds = new google.maps.LatLngBounds();
+    loadEvents(); // Load events after the map is initialized
+}
 
-                events.forEach(event => {
-                    // Parse and validate latitude and longitude
-                    const latitude = parseFloat(event.Latitude);
-                    const longitude = parseFloat(event.Longitude);
+function loadEvents() {
+    fetch('http://localhost:3000/api/map', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Clear previous markers
+        clearMarkers();
 
-                    if (isNaN(latitude) || isNaN(longitude)) {
-                        console.error('Invalid latitude or longitude:', event);
-                        return; // Skip this marker
-                    }
+        // Add new markers
+        data.forEach(event => {
+            const color = new Date(event.Date) > new Date() ? 'red' : 'green';
+            const marker = new google.maps.Marker({
+                position: { lat: event.Latitude, lng: event.Longitude },
+                map: map,
+                title: event.location,
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    fillColor: color,
+                    fillOpacity: 1,
+                    strokeColor: color,
+                    strokeOpacity: 1,
+                    strokeWeight: 2,
+                    scale: 4
+                }
+            });
 
-                    const isUpcoming = new Date(event.Date) > new Date();
-                    const markerColor = isUpcoming ? 'green' : 'red';
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <strong>${event.location}</strong><br>
+                    ${event.Details}<br>
+                    Date: ${new Date(event.Date).toLocaleDateString()}
+                `
+            });
 
-                    const marker = new google.maps.Marker({
-                        position: { lat: latitude, lng: longitude },
-                        map: map,
-                        title: event.Details,
-                        icon: {
-                            path: google.maps.SymbolPath.CIRCLE,
-                            fillColor: markerColor,
-                            fillOpacity: 0.8,
-                            strokeWeight: 0,
-                            scale: 6
-                        }
-                    });
+            marker.addListener('click', () => {
+                infoWindow.open(map, marker);
+            });
 
-                    const infoWindow = new google.maps.InfoWindow({
-                        content: `
-                            <strong>${event.Details || 'No details available'}</strong><br>
-                            Date: ${new Date(event.Date).toLocaleDateString()}<br>
-                            ${event.Link ? `<a href="${event.Link}" target="_blank">View Details</a>` : 'No link available'}
-                        `
-                    });
-
-                    marker.addListener('click', () => {
-                        infoWindow.open(map, marker);
-                    });
-
-                    bounds.extend(marker.getPosition());
-                });
-
-                map.fitBounds(bounds);
-            } else {
-                console.log('No events available to display.');
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching events:', error);
+            // Adjust map bounds to fit markers
+            const bounds = new google.maps.LatLngBounds();
+            bounds.extend(marker.position);
+            map.fitBounds(bounds);
         });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+}
+
+function clearMarkers() {
+    // This approach assumes you will keep track of markers separately if needed
+    // If you want to remove markers, you need to keep an array of markers and then clear them
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Ensure event.js is loaded before this
+    initMap();
 });
