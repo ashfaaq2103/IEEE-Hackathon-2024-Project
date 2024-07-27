@@ -11,11 +11,10 @@
 @import url('contact.css');
 @import url('individual_social.css');
 @import url('event.css');
-.toBeDeleted
-{
-    min-height: 80vh;
-    
-}
+
+@import url('form.css');
+
+
 
 body{
     font-family: sans-serif;
