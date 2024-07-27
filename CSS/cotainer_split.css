@@ -12,7 +12,7 @@
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
     justify-content: space-between;
     align-items: center; /* Center items vertically within the container */
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     background-color: #fff;
     padding: 20px;
@@ -26,8 +26,9 @@
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    margin: 10px; /* Add margin to separate boxes */
+    margin: 10px;
 }
+
 
 #separator-3 .box:hover {
     transform: translateY(-5px);
