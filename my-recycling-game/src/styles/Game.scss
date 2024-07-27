@@ -1,0 +1,158 @@
+@function randomNum($min, $max) {
+    $rand: random();
+    $randomNum: $rand * ($max - $min) + $min;
+    @return $randomNum;
+  }
+  
+  .game {
+    width: 100%;
+    height: 100%;
+    background-color: #6ecddd;
+    z-index: 1;
+  }
+  
+  .goodObject:checked {
+    counter-increment: game 2;
+  }
+  
+  .badObject:checked {
+    counter-increment: game -1;
+  }
+  
+  .score::after {
+    content: counter(game);
+    height: 40%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+  }
+  
+  #badObjects input[type="checkbox"],
+  #goodObjects input[type="checkbox"] {
+    width: 120px;
+    top: -180px;
+    height: 120px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    cursor: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1518293165/hcc/grab4.svg"), auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .goodObject {
+    @for $i from 1 through 10 {
+      $speed: randomNum(3, 6) + "s";
+      $delay: randomNum(5, 8) + "s";
+      $left: random(95) + "%";
+      $goodImages: (
+        "https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good1.svg",
+        "https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good2.svg",
+        "https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good3.svg"
+      );
+      $goodImg: nth($goodImages, random(length($goodImages)));
+  
+      &:nth-child(#{$i}) {
+        background: url($goodImg);
+        animation-duration: #{$speed};
+        animation-delay: #{$delay};
+        left: #{$left};
+      }
+    }
+  }
+  
+  .badObject {
+    @for $i from 1 through 10 {
+      $speed: randomNum(3, 6) + "s";
+      $delay: randomNum(5, 8) + "s";
+      $left: random(95) + "%";
+      $badImages: (
+        "https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad1.svg",
+        "https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad2.svg",
+        "https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad3.svg",
+        "https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad4.svg",
+        "https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad5.svg"
+      );
+      $badImg: nth($badImages, random(length($badImages)));
+  
+      &:nth-child(#{$i}) {
+        background: url($badImg);
+        animation-duration: #{$speed};
+        animation-delay: #{$delay};
+        left: #{$left};
+      }
+    }
+  }
+  
+  .score {
+    position: relative;
+    margin: 0;
+    color: #f0f8ff24;
+    font-size: 50vh;
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  input[type="checkbox"] {
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  input[type="checkbox"]:focus {
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  input[type="checkbox"]:checked {
+    pointer-events: none;
+    -webkit-animation: hitFade 2s;
+    animation: hitFade 2s;
+  }
+  
+  @keyframes hitFade {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  #badObjects input[type="checkbox"]:checked:after,
+  #goodObjects input[type="checkbox"]:checked:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+  }
+  
+  #badObjects,
+  #goodObjects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  
