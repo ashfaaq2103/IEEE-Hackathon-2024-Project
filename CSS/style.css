@@ -11,11 +11,15 @@
 @import url('individual_social.css');
 @import url('event.css');
 @import url('carousel.css');
-@import url('form.css');
 @import url('typewriter.css');
+
 @import url('background.css');
 @import url('product.css');
 @import url('searchbar.css');
+
+@import url('team.css');
+
+
 
 body{
     font-family: sans-serif;
