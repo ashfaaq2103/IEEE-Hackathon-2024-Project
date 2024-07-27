@@ -68,13 +68,22 @@
 			</div>
 		</div>
 		</section>
-		<section id="event-section">
-            <div class="events-wrapper">
-                <div class="events" id="events-container">
 
-                </div>
-            </div>
-        </section>
+		<div class="container-wrapper" style=" width: 100%;" >
+			<div id="separator-3" class="container" style=" max-width:100%; height: auto;">
+				<div class="box">
+					<div class="events-wrapper">
+						<div class="events" id="events-container">
+							
+						</div>
+					</div></div>
+				<div class="box" style="background-color: rgba(240, 248, 255, 0); box-shadow: none;" >
+					<section id="map">
+						<div id="map-canvas"></div>
+					</section>
+				</div>
+			</div>
+		</div>
 
 		
 
@@ -84,12 +93,15 @@
 
 
 
-
+		
 		  <script src="./JS/loader.js"></script>
 		  <script src="./JS/common.js"></script>
 		  <script src="./JS/load _header_and_footer.js"></script>
 		  <script src="./JS/carousel.js"></script>
-		<script src="./JS/event.js"></script>
+		
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeXvlFqB3WXpza5P8qnBpO29bJB_VIcMk&callback=initMap"></script>
+    	<script src="./JS/event.js"></script>
+		<script src="./JS/maps.js"></script>
 
 			
 	</body>

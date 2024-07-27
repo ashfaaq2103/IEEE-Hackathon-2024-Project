@@ -1,12 +1,12 @@
+@import url('loader.css');
+
 #map {
-    height: 500px;
-    width: 100%;
+    height: 500px; /* Set the height of the map container */
+    width: 100%;   /* Set the width of the map container */
+    position: relative;
 }
 
-/* Legend style */
-#legend {
-    background: white;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid black;
+#map-canvas {
+    height: 100%; /* Full height of the parent section */
+    width: 100%;  /* Full width of the parent section */
 }
