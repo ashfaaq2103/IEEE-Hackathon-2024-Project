@@ -1,0 +1,167 @@
+/* Styling the main section */
+#event-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+    background: url('../Assets/seaside.jpeg');
+    background-size: cover;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling the left floating section */
+#event-section .leftBox {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 50px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+/* Styling the content of left section */
+#event-section .leftBox .content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    transition: .5s;
+}
+
+/* Styling the hover effect of left floating section */
+#event-section .leftBox .content:hover {
+    background: #e91e63;
+}
+
+/* Styling the header of left floating section */
+#event-section .leftBox .content h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+/* Styling the paragraph of left floating section */
+#event-section .leftBox .content p {
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+/* Wrapper for events section */
+.events-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Styling the events section */
+.events {
+    width: 100%;
+}
+
+/* Styling each individual event section */
+.event-item {
+    background: #fff;
+    margin: 15px 0;
+    overflow: auto;
+    width: 100%;
+}
+
+/* Styling the time class of events section */
+.event-item .time {
+    position: relative;
+    padding: 20px;
+    background: #262626;
+    box-sizing: border-box;
+    width: 30%;
+    float: left;
+    text-align: center;
+    transition: .5s;
+}
+
+/* Styling the hover effect of events section */
+.event-item:hover .time {
+    background: #e91e63;
+}
+
+/* Styling the header of time class of events section */
+.event-item .time h2 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 48px;
+    line-height: 30px;
+}
+
+/* Styling the texts of time class of events section */
+.event-item .time h2 span {
+    font-size: 24px;
+}
+
+/* Styling the details class of events section */
+.event-item .details {
+    padding: 20px;
+    background: #fff;
+    box-sizing: border-box;
+    width: 70%;
+    float: left;
+}
+
+/* Styling the header of the details class of events section */
+.event-item .details h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+}
+
+/* Styling the lists of details class of events section */
+.event-item .details p {
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Styling the links of details class of events section */
+.event-item .details a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1.5px solid #262626;
+    margin-top: 8px;
+    font-size: 18px;
+    transition: .5s;
+}
+
+/* Styling the details class's hover effect */
+.event-item .details a:hover {
+    background: #e91e63;
+    color: #fff;
+    border-color: #e91e63;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .event-item .time,
+    .event-item .details {
+        width: 100%;
+        float: none;
+    }
+
+    .event-item .time {
+        text-align: center;
+    }
+
+    .event-item .details {
+        text-align: center;
+    }
+}
