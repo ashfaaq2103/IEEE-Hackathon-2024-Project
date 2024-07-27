@@ -37,13 +37,10 @@ async function createTable(pool) {
 
         // SQL command to create a new table
         const query = `
-            CREATE TABLE test_table (
-                Id INT IDENTITY(1,1) PRIMARY KEY,
-                Name NVARCHAR(100) NOT NULL,
-                Age INT NULL,
-                Email NVARCHAR(255) NOT NULL UNIQUE,
-                CreatedAt DATETIME DEFAULT GETDATE()
-            )
+            CREATE TABLE user_info (
+            Email VARCHAR(255) NOT NULL PRIMARY KEY,
+            Password VARCHAR(255) NOT NULL
+        )
         `;
 
         // Execute the query

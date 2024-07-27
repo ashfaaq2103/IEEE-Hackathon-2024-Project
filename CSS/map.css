@@ -1,0 +1,12 @@
+@import url('loader.css');
+
+#map {
+    height: 500px; /* Set the height of the map container */
+    width: 100%;   /* Set the width of the map container */
+    position: relative;
+}
+
+#map-canvas {
+    height: 100%; /* Full height of the parent section */
+    width: 100%;  /* Full width of the parent section */
+}

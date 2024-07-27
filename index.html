@@ -1,22 +1,300 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="./CSS/style.css" type="text/css" rel="stylesheet">
-	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<!-- Sticky header -->
 
-	<body>
-		<div id="header_container"></div>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./CSS/style.css" type="text/css" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Sticky header -->
 
-		<div class="toBeDeleted"> </div>
+<body>
+
+    <div class="loader-container">
+        <div class="loader"></div>
+        <div class="loader-text">Loading...</div>
+    </div>
+    <div id="header_container"></div>
+
+    <!-- Image header -->
+
+    <img src="./Assets/Diving Photographic Minimalist Blue YouTube Intro.gif" alt="Description of the GIF" width="100%"
+        height="500">
+
+        <div class="text-container"></div>
+        <!-- Text -->
+        <div class="typewriter" style="width: 80%; font-weight: bold;">
+            <p>Hi, I'm Menmen, a passionate coder who loves the ocean. After witnessing the pollution at Flic en Flac
+                beach
+                and
+                the impact of plastic waste and non-renewable fuel, I felt compelled to make a change.
+                Inspired
+                by these experiences, this website is dedicated to raising awareness and promoting
+                eco-friendly practices.</p>
+        </div>
+        <div class="team-header">
+            <h1>MAURITIUS SDG TRENDS </h1>
+        </div>
+        <div class="container-wrapper" style="width: 100%; max-width: 100%; background-color: white;">
+            <div id="separator-3" class="container" style="width: 100%; max-width: 100%;">
+				<div class="card" id="rotate_card"
+                    style="--front-bg-color: white; --back-bg-color:  #E5243B; --front-border-color:  #E5243B; --back-border-color: #E5243B;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Sustainable_Development_Goal_01NoPoverty.svg/1200px-Sustainable_Development_Goal_01NoPoverty.svg.png"
+                                  width="120px" height="120px">
+                            <i id="Goal1" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 1</h2>
+                            <p style="color: antiquewhite;">End poverty in all its forms everywhere</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #DDA63A; --front-border-color: #DDA63A; --back-border-color: #DDA63A;">
+                    <div class="card-inner">
+                        <div class="card-front" id="goal2">
+                            <img src="https://i.pinimg.com/474x/71/b5/43/71b543ff1ef13e4a5af2ad6651accbc5.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal2" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: orange;"></i>
+                            </div>
+                        <div class="card-back">
+                            <h2>Goal 2</h2>
+                            <p style="color: antiquewhite;">End hunger, achieve food security and improved nutrition and promote sustainable </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #4C9F38; --front-border-color: #4C9F38; --back-border-color: #4C9F38;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/9d/f7/ba/9df7baeb91c8a06e3c9e112d1d2b6ac2.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal3" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: red;"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 3</h2>
+                            <p style="color: antiquewhite;">Ensure healthy lives and promote well-being for all at all ages</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #C5192D; --front-border-color: #C5192D; --back-border-color: #C5192D;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/50/f2/98/50f2980e7a2caffe95c73edb90672f9a.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal4" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 4</h2>
+                            <p style="color: antiquewhite;">Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #FF3A21; --front-border-color: #FF3A21; --back-border-color: #FF3A21;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/7c/f5/86/7cf5866b032a93c36053bb0fb4888b5a.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal5" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: orange;"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 5</h2>
+                            <p style="color: antiquewhite;"> Achieve gender equality and empower all women and girls</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #26BDE2; --front-border-color: #26BDE2; --back-border-color: #26BDE2;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/79/57/0c/79570cc14c88c9ed8766f8a63376c7b8.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal6" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 6</h2>
+                            <p style="color: antiquewhite;">Ensure availability and sustainable management of water and sanitation for all</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #FCC30B; --front-border-color: #FCC30B; --back-border-color: #FCC30B;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/736x/10/5b/12/105b128bc8bef11494b3f9cbff7aa76f.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal7" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 7</h2>
+                            <p style="color: antiquewhite;">Ensure access to affordable, reliable, sustainable and modern energy for all</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #A21942; --front-border-color: #A21942; --back-border-color: #A21942;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/56/46/2a/56462abaeed0df8b8538c3ea1d7b5e86.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal8" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: orange;"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 8</h2>
+                            <p style="color: antiquewhite;">Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all</p>
+                        </div>
+                    </div>
+                </div>
+				<div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #FD6925; --front-border-color: #FD6925; --back-border-color: #FD6925;">
+                    <div class="card-inner" id="goal1">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/3c/d0/1e/3cd01eb240c4868fae975a6a502132f5.jpg"
+                                  width="120px" height="120px">
+                            <i id="Goal9" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 9</h2>
+                            <p style="color: antiquewhite;">Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #DD1367; --front-border-color: #DD1367; --back-border-color: #DD1367;">
+                    <div class="card-inner">
+                        <div class="card-front" id="goal2">
+                            <img src="https://i.pinimg.com/564x/47/ef/05/47ef05ecb014498342a95391bd179507.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal10" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: orange;"></i>
+                            </div>
+                        <div class="card-back">
+                            <h2>Goal 10</h2>
+                            <p style="color: antiquewhite;">Reduce inequality within and among countries </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #FD9D24; --front-border-color: #FD9D24; --back-border-color: #FD9D24;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/736x/86/5c/43/865c4388c9c05ced1a44b0cf9680ed29.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal11" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: red;"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 11</h2>
+                            <p style="color: antiquewhite;">Make cities and human settlements inclusive, safe, resilient and sustainable</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #BF8B2E; --front-border-color: #BF8B2E; --back-border-color: #BF8B2E;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/736x/86/5c/43/865c4388c9c05ced1a44b0cf9680ed29.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal12" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>
+
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 12</h2>
+                            <p style="color: antiquewhite;">Ensure sustainable consumption and production patterns</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #3F7E44; --front-border-color: #3F7E44; --back-border-color: #3F7E44;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/ee/a8/4f/eea84fe1e801a9defc9e2e32b8d857cc.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal13" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: orange;"></i>
+
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 13</h2>
+                            <p style="color: antiquewhite;">Take urgent action to combat climate change and its impacts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #0A97D9; --front-border-color: #0A97D9; --back-border-color: #0A97D9;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/0d/1d/8a/0d1d8a978ea40167ad3dc262d8896ef0.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal14" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 14</h2>
+                            <p style="color: antiquewhite;">Take urgent action to combat climate change and its impacts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #56C02B; --front-border-color: #56C02B; --back-border-color: #56C02B;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/6c/57/22/6c57225a1c3091bdabf37f872440e886.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal15" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 15</h2>
+                            <p style="color: antiquewhite;">Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #00689D; --front-border-color: #00689D; --back-border-color: #00689D;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/b2/61/7e/b2617ee19f60e4cc4137adb89a0c10da.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal16" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: orange;"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 16</h2>
+                            <p style="color: antiquewhite;">Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels</p>
+                        </div>
+                    </div>
+                </div>
+				<div class="card" id="rotate_card"
+                    style=" --front-bg-color: white; --back-bg-color: #00689D; --front-border-color: #00689D; --back-border-color: #00689D;">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="https://i.pinimg.com/564x/60/01/48/60014852d64912ce26697a21e3b4e27d.jpg"
+                                  width="120px" height="120px">
+                                <i id="Goal17" class="" aria-hidden="true" style="position: absolute; font-size: 4.5rem; left: 60%; color: orange;"></i>
+                        </div>
+                        <div class="card-back">
+                            <h2>Goal 17</h2>
+                            <p style="color: antiquewhite;">Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development
+							</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-		<script src="./JS/common.js"></script>
-		<script src="./JS/load _header_and_footer.js"></script>
 
-		<div id ="footer_container"></div>
-	</body>
+
+
+        <div id="footer_container"></div>
+		
+        <script src="./JS/sdg_return.js"></script>
+		<script src="./JS/loader.js"></script>
+        <script src="./JS/common.js"></script>
+        <script src="./JS/load _header_and_footer.js"></script>
+		<script src="./JS/pwa_service.js"></script>
+
+
+</body>
 
 </html>

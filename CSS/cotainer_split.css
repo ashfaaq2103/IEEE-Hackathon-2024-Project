@@ -3,17 +3,21 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #separator-3 {
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
     justify-content: space-between;
     align-items: center; /* Center items vertically within the container */
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
 }
 
 #separator-3 .box {
@@ -23,7 +27,9 @@
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    margin: 10px;
 }
+
 
 #separator-3 .box:hover {
     transform: translateY(-5px);
@@ -39,3 +45,54 @@
     line-height: 1.6;
     color: #666;
 }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    #separator-3 {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    #separator-3 {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    #separator-3 .box {
+        width: 100%; /* Make boxes full width */
+        max-width: 600px; /* Limit the width of boxes */
+        margin: 10px 0; /* Add vertical margin */
+    }
+
+    #separator-3 h2 {
+        font-size: 1.25rem; /* Adjust font size */
+    }
+    
+    #separator-3 p {
+        font-size: 0.875rem; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    #separator-3 h2 {
+        font-size: 1rem; /* Adjust font size for very small screens */
+    }
+    
+    #separator-3 p {
+        font-size: 0.75rem; /* Adjust font size for very small screens */
+    }
+}
+
+
+/* Keyframes for the sliding effect */
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }

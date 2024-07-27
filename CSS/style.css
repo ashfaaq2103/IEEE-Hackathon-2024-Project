@@ -6,7 +6,38 @@
 @import url('password_box.css');
 @import url('pallette.css');
 @import url('cotainer_split.css');
-.toBeDeleted
-{
-    min-height: 80vh;
+@import url('loader.css');
+@import url('contact.css');
+@import url('individual_social.css');
+@import url('event.css');
+@import url('carousel.css');
+@import url('typewriter.css');
+
+@import url('background.css');
+@import url('product.css');
+@import url('searchbar.css');
+
+@import url('team.css');
+@import url('map.css');
+
+
+body{
+    font-family: sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+
+/* Import Poppins font in CSS if not done in HTML */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.team-header {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+}
+
+.team-header h1 {
+    font-weight: 600;
+    color: #333; /* Adjust color as needed */
+    font-size: 2.5rem; /* Adjust size as needed */
 }
