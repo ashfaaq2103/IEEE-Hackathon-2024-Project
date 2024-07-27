@@ -78,19 +78,8 @@ sql.connect(config).then(pool => {
         }
     });
 
-    app.get('/events', async (req, res) => {
-        try {
-            await sql.connect(config);
-            const result = await sql.query('SELECT * FROM Events');
-            res.json(result.recordset);
-        } catch (err) {
-            res.status(500).send(err.message);
-        }
-    });
-
-
      // Define route to get data from sdg_trend
-     app.get('/api/sdgTrend', async (req, res) => {
+    app.get('/api/sdgTrend', async (req, res) => {
         try {
             const result = await pool.request().query('SELECT * FROM sdg_trend');
             res.json(result.recordset);
@@ -101,6 +90,16 @@ sql.connect(config).then(pool => {
     });
     // Define route to get events with geocoding
 
+        // Define route to get data from sdg_trend
+        app.get('/api/sdgData', async (req, res) => {
+        try {
+            const result = await pool.request().query('SELECT * FROM sdg_linksAndPhotos');
+            res.json(result.recordset);
+        } catch (err) {
+            console.error('Error executing query:', err);
+            res.status(500).send('Error executing query');
+        }
+    });
 
     app.get('/api/map', async (req, res) => {
         try {

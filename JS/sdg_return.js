@@ -1,5 +1,5 @@
 // Define the getdata function
-function getdata() {
+async function getdata() {
     fetch('http://localhost:3000/api/sdgTrend', {
         method: 'GET',
         headers: {
@@ -9,10 +9,11 @@ function getdata() {
     .then(response => response.json())
     .then(data => {
         // Output the data
-        console.log('Data fetched from /api/sdgTrend:', data);
+        // console.log('Data fetched from /api/sdgTrend:', data);
 
         // You can also store the data in variables if needed
         let sdgData = data;
+        setData(data)
     })
     .catch(error => {
         console.error('Error fetching data:', error);
@@ -20,5 +21,17 @@ function getdata() {
     });
 }
 
-// Call the getdata function to fetch and display the data
-getdata();
+function setData(data)
+{
+    for(let i = 1; i < 18; i++)
+    {
+        let element = "Goal" + i
+
+        let goal = document.getElementById(element) 
+
+        console.log(goal); 
+    }
+}
+
+// Call the loadEvents function to fetch and display the data
+window.onload = getdata();

@@ -12,8 +12,14 @@
 @import url('event.css');
 @import url('carousel.css');
 @import url('typewriter.css');
+
+@import url('background.css');
+@import url('product.css');
+@import url('searchbar.css');
+
 @import url('team.css');
 @import url('map.css');
+
 
 body{
     font-family: sans-serif;

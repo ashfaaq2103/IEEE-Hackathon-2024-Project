@@ -14,7 +14,7 @@
 	--header-height-difference: calc(
 		var(--header-outer-height) - var(--header-inner-height)
 	);
-	--header-bg: #f8d29025;
+	--header-bg: #f6ecdb;
 	
 }
 
