@@ -4,7 +4,8 @@
     flex-wrap: wrap;
     width: 100%;
     min-height: 100vh;
-    background: url('../Assets/seaside.jpeg');
+    /*background: url('../Assets/seaside.jpeg'); */
+    background-color: #AAD7D9;
     background-size: cover;
     box-sizing: border-box;
     justify-content: center;
