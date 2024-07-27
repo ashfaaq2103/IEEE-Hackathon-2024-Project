@@ -4,8 +4,7 @@
     flex-wrap: wrap;
     width: 100%;
     min-height: 100vh;
-    /*background: url('../Assets/seaside.jpeg'); */
-    background-color: #AAD7D9;
+    background-color: #F0F4F7;
     background-size: cover;
     box-sizing: border-box;
     justify-content: center;
@@ -20,18 +19,21 @@
     padding: 50px;
     box-sizing: border-box;
     color: #fff;
+    text-align: center;
 }
 
 /* Styling the content of left section */
 #event-section .leftBox .content {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     padding: 40px;
-    transition: .5s;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.3s;
 }
 
 /* Styling the hover effect of left floating section */
 #event-section .leftBox .content:hover {
     background: #e91e63;
+    transform: scale(1.05);
 }
 
 /* Styling the header of left floating section */
@@ -40,12 +42,14 @@
     padding: 0;
     font-size: 36px;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Styling the paragraph of left floating section */
 #event-section .leftBox .content p {
-    margin: 10px 0 0;
+    margin: 15px 0 0;
     padding: 0;
+    font-size: 18px;
 }
 
 /* Wrapper for events section */
@@ -54,11 +58,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    max-width: 1000px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    width: 95%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
     box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Styling the events section */
@@ -68,22 +73,27 @@
 
 /* Styling each individual event section */
 .event-item {
+    display: flex;
     background: #fff;
     margin: 15px 0;
-    overflow: auto;
-    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: auto; /* This makes the item grow to fit its content */
 }
 
 /* Styling the time class of events section */
 .event-item .time {
-    position: relative;
     padding: 20px;
     background: #262626;
+    color: #fff;
     box-sizing: border-box;
     width: 30%;
-    float: left;
     text-align: center;
-    transition: .5s;
+    transition: background 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Styling the hover effect of events section */
@@ -93,15 +103,11 @@
 
 /* Styling the header of time class of events section */
 .event-item .time h2 {
-    position: absolute;
     margin: 0;
     padding: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
     font-size: 48px;
-    line-height: 30px;
+    line-height: 1.2;
+    position: relative;
 }
 
 /* Styling the texts of time class of events section */
@@ -112,17 +118,18 @@
 /* Styling the details class of events section */
 .event-item .details {
     padding: 20px;
-    background: #fff;
+    background: #f9f9f9;
     box-sizing: border-box;
     width: 70%;
-    float: left;
+    transition: background 0.3s;
 }
 
 /* Styling the header of the details class of events section */
 .event-item .details h3 {
     margin: 0;
     padding: 0;
-    font-size: 22px;
+    font-size: 24px;
+    color: #333;
 }
 
 /* Styling the lists of details class of events section */
@@ -130,6 +137,7 @@
     margin: 10px 0 0;
     padding: 0;
     font-size: 16px;
+    color: #666;
 }
 
 /* Styling the links of details class of events section */
@@ -140,7 +148,8 @@
     border: 1.5px solid #262626;
     margin-top: 8px;
     font-size: 18px;
-    transition: .5s;
+    color: #262626;
+    transition: background 0.5s, color 0.5s, border-color 0.5s;
 }
 
 /* Styling the details class's hover effect */
@@ -152,17 +161,23 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .event-item {
+        display: flex;
+        flex-direction: column;
+    }
     .event-item .time,
     .event-item .details {
         width: 100%;
         float: none;
-    }
-
-    .event-item .time {
         text-align: center;
     }
-
-    .event-item .details {
-        text-align: center;
+    .event-item .details h3 {
+        font-size: 20px;
+    }
+    .event-item .details p {
+        font-size: 14px;
+    }
+    .event-item .details a {
+        font-size: 16px;
     }
 }
