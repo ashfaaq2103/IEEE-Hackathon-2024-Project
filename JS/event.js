@@ -34,9 +34,9 @@ function loadEvents() {
                 <a href="${event.Link}">View Details</a>
             `;
 
+
             eventItem.appendChild(timeDiv);
             eventItem.appendChild(detailsDiv);
-
             container.appendChild(eventItem);
         });
     })
