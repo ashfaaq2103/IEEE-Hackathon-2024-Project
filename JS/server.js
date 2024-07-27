@@ -39,7 +39,6 @@ sql.connect(config).then(pool => {
         }
     });
 
-    // Define route to insert data
     // Define route to check if email exists
     app.post('/api/checkEmail', async (req, res) => {
         const { email } = req.body;
@@ -77,6 +76,7 @@ sql.connect(config).then(pool => {
             res.status(500).send('Error executing query');
         }
     });
+
     app.get('/events', async (req, res) => {
         try {
             await sql.connect(config);
@@ -86,6 +86,20 @@ sql.connect(config).then(pool => {
             res.status(500).send(err.message);
         }
     });
+
+
+     // Define route to get data from sdg_trend
+     app.get('/api/sdgTrend', async (req, res) => {
+        try {
+            const result = await pool.request().query('SELECT * FROM sdg_trend');
+            res.json(result.recordset);
+        } catch (err) {
+            console.error('Error executing query:', err);
+            res.status(500).send('Error executing query');
+        }
+    });
+
+
     // Define route to handle login
     app.post('/api/login', async (req, res) => {
         const { email, password } = req.body;
