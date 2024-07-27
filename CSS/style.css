@@ -15,6 +15,7 @@
 @import url('typewriter.css');
 @import url('background.css');
 @import url('product.css');
+@import url('searchbar.css');
 
 body{
     font-family: sans-serif;
