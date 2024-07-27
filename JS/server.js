@@ -3,6 +3,7 @@ const sql = require('mssql');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const axios = require('axios');
 
 const app = express();
 const port = 3000;
@@ -98,8 +99,20 @@ sql.connect(config).then(pool => {
             res.status(500).send('Error executing query');
         }
     });
+    // Define route to get events with geocoding
 
 
+    app.get('/api/map', async (req, res) => {
+        try {
+            const result = await pool.request().query('SELECT Date, Latitude, Longitude, Location AS location, Details FROM Events');
+            const events = result.recordset;
+            console.log('Events:', events);
+            res.json(events);
+        } catch (err) {
+            console.error('Error executing query:', err);
+            res.status(500).send('Error executing query');
+        }
+    });
     // Define route to handle login
     app.post('/api/login', async (req, res) => {
         const { email, password } = req.body;
