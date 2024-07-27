@@ -23,13 +23,39 @@ async function getdata() {
 
 function setData(data)
 {
-    for(let i = 1; i < 18; i++)
+    for(let i = 0; i < 17; i++)
     {
-        let element = "Goal" + i
+        let element = "Goal" + (i+1) 
 
         let goal = document.getElementById(element) 
+        let dataTrend = data[i].trend; 
 
-        console.log(goal); 
+        if (dataTrend == "rightArrow")
+        {
+            goal.innerHTML = '<i class="fa fa-arrow-right" aria-hidden="true" style="position: center; font-size: 4.5rem; left: 60%; color: orange;"></i>';
+        }
+
+        if (dataTrend == "upArrow")
+        {
+            goal.innerHTML = ''; 
+            goal.innerHTML = '<i class="fa fa-arrow-up" aria-hidden="true" style="position: center; font-size: 4.5rem; left: 60%; color: rgb(18, 199, 18);"></i>';  
+        }
+
+        if (dataTrend == "upRightArrow")
+        {
+            goal.innerHTML = '<i class="fa fa-arrow-right" aria-hidden="true" style="position: center; font-size: 4.5rem; left: 60%; color: orange;"></i>';
+        }
+
+        if (dataTrend == "downArrow")
+        {
+            goal.innerHTML = '<i class="fa fa-arrow-down" aria-hidden="true" style="position: center; font-size: 4.5rem; left: 60%; color: red;"></i>';  
+        }
+
+        if (dataTrend == "none")
+        {
+            goal.innerHTML = '<i class="fa fa-plus" aria-hidden="true" style="position: center; font-size: 4.5rem; left: 60%; color: grey;"></i>';  
+        }
+
     }
 }
 
