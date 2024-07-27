@@ -10,13 +10,13 @@ h1 {
 }
 
 #styled-button {
-    --button-color: #7808d0;
+    --button-color: #08b2d0;
     line-height: 1;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: .75rem;
-    background-color: #c300ff;
+    background-color: #285b94;
     color: #fff;
     border-radius: 10rem;
     font-weight: 600;
@@ -43,7 +43,7 @@ h1 {
 }
 
 #styled-button:hover {
-    background-color: #000;
+    background-color: #4ba2d4;
 }
 
 #styled-button:hover .button__icon-wrapper {
