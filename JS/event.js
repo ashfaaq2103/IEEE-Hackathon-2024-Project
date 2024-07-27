@@ -30,13 +30,13 @@ function loadEvents() {
             detailsDiv.className = 'details';
             detailsDiv.innerHTML = `
                 <h3>Where is the event happening?</h3>
-                <p>${event.Location}</p>
+                <p>${event.Details}</p>
                 <a href="${event.Link}">View Details</a>
             `;
 
+
             eventItem.appendChild(timeDiv);
             eventItem.appendChild(detailsDiv);
-
             container.appendChild(eventItem);
         });
     })
