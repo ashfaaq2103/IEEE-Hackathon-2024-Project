@@ -17,6 +17,7 @@
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
 }
 
 #separator-3 .box {
@@ -82,3 +83,16 @@
         font-size: 0.75rem; /* Adjust font size for very small screens */
     }
 }
+
+
+/* Keyframes for the sliding effect */
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
