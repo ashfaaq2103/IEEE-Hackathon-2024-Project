@@ -10,6 +10,7 @@
 @import url('loader.css');
 @import url('contact.css');
 @import url('individual_social.css');
+@import url('event.css');
 .toBeDeleted
 {
     min-height: 80vh;
