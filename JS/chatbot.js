@@ -37,7 +37,7 @@ function startRecognition() {
                 }
             }
             // Update placeholder with interim transcript
-            userInput.placeholder = interimTranscript;
+            userInput.value = interimTranscript;
         }
 
         // Set flag to indicate recognition is running
