@@ -14,7 +14,7 @@
 	--header-height-difference: calc(
 		var(--header-outer-height) - var(--header-inner-height)
 	);
-	--header-bg: #f6ecdb;
+	--header-bg: #ECF0F1;
 	
 }
 
@@ -92,7 +92,7 @@ body {
 
 .header-navigation a:hover 
 {
-	color: black;
+	color: #26BDE2;
 }
 
 .header-navigation button {
@@ -104,7 +104,7 @@ body {
 .header-navigation a:hover:after,
 .header-navigation button:hover:after {
 	transform: scalex(1);
-	color: black;
+	color: #26BDE2;
 }
 
 .header-navigation a:after,
