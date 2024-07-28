@@ -6,7 +6,6 @@
     width: 800px;
     background-color: white;
     margin: 5vh auto; /* Center the card with some margin */
-    box-shadow: 2vw 2vw 12vw 3vw #ccc;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
