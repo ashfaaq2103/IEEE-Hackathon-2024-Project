@@ -90,6 +90,15 @@ sql.connect(config).then(pool => {
         }
     });
 
+    app.get('/events', async (req, res) => {
+        try {
+            await sql.connect(config);
+            const result = await sql.query('SELECT * FROM Events');
+            res.json(result.recordset);
+        } catch (err) {
+            res.status(500).send(err.message);
+        }
+    });
      // Define route to get data from sdg_trend
     app.get('/api/sdgTrend', async (req, res) => {
         try {
