@@ -1,9 +1,11 @@
-// src/components/Item.js
 import React from 'react';
-import '../styles/Item.scss'; // Import specific styles
+import './Item.scss';
 
-const Item = ({ type }) => (
-  <input type="checkbox" className={`object ${type}`} />
+const Item = ({ imgSrc, text }) => (
+  <div className="item">
+    <img src={imgSrc} alt=""/>
+    <p>{text}</p>
+  </div>
 );
 
 export default Item;
