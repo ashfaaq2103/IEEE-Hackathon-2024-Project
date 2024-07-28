@@ -1,21 +1,5 @@
 /* Global Styles */
-* {
-    font-size: 1.3vw;
-    font-family: "Epilogue", sans-serif;
-  }
-  
-  html {
-    --scrollbarBG: #fff;
-    --thumbBG: #90a4ae;
-  }
-  
-  body {
-    background: #ccc;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+
   /* Card Styles */
   body .card {
     height: 500px;
