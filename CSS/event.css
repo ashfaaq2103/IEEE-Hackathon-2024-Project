@@ -32,7 +32,7 @@
 
 /* Styling the hover effect of left floating section */
 #event-section .leftBox .content:hover {
-    background: #e91e63;
+    background: #26BDE2;
     transform: scale(1.05);
 }
 
@@ -59,7 +59,7 @@
     justify-content: center;
     align-items: center;
     width: 95%;
-    background: rgba(0, 0, 0, 0.7);
+    background: #fff;
     padding: 30px;
     box-sizing: border-box;
     border-radius: 10px;
@@ -85,8 +85,9 @@
 /* Styling the time class of events section */
 .event-item .time {
     padding: 20px;
-    background: #262626;
-    color: #fff;
+    background: #104684;
+    color: #ffffff;
+    
     box-sizing: border-box;
     width: 30%;
     text-align: center;
@@ -98,7 +99,7 @@
 
 /* Styling the hover effect of events section */
 .event-item:hover .time {
-    background: #e91e63;
+    background: #26BDE2;
 }
 
 /* Styling the header of time class of events section */
@@ -108,6 +109,7 @@
     font-size: 48px;
     line-height: 1.2;
     position: relative;
+    
 }
 
 /* Styling the texts of time class of events section */
@@ -154,9 +156,9 @@
 
 /* Styling the details class's hover effect */
 .event-item .details a:hover {
-    background: #e91e63;
+    background: #26BDE2;
     color: #fff;
-    border-color: #e91e63;
+    border-color: #26BDE2;
 }
 
 /* Responsive adjustments */
