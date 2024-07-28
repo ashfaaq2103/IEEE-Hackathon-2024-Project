@@ -16,23 +16,40 @@
         console.log(contaiedSpace); 
         contaiedSpace.innerHTML = '<div id="separator-3" class="container" style="width: 100%; max-width: 100%;">'; 
 
-        data.forEach(event => {
+        data.forEach(data => {
             
+            if (data.id == 2) 
+            {
+                contaiedSpace.innerHTML += 
+                `<div class="productcard" id="${data.id}"><div class="productcard-details"><img src="https://i.pinimg.com/564x/07/c4/e4/07c4e4eaa1a9e113637df71f75ef8949.jpg" class="image_market" > 
+                  <p class="text-title">${data.title}</p><p class="text-body">${data.description}</p>
+                  </div><button onclick="callAmazon('${data.title}')" class="productcard-button">More info</button></div>`;   
+
+            }else
+            {
+                contaiedSpace.innerHTML += 
+                `<div class="productcard" id="${data.id}"><div class="productcard-details"><img src="${data.imageUrl}" class="image_market" > 
+                  <p class="text-title">${data.title}</p><p class="text-body">${data.description}</p>
+                  </div><button onclick="callAmazon('${data.title}')" class="productcard-button">More info</button></div>`;    
+            }
+
+          
         });
-        // <div class="productcard" id="4">
-        //         <div class="productcard-details">
-        //             <img src="https://i.pinimg.com/564x/25/e4/57/25e457230e48e9932913033211ba0c24.jpg" class="image_market" >
-        //             <p class="text-title">Zero Waste Concealer</p>
-        //             <p class="text-body">A concealer that comes in eco-friendly packaging, designed to reduce waste.</p>
-        //         </div>
-        //         <button class="productcard-button">More info</button>
-        //     </div>
+        
 
     })
     .catch(error => {
         console.error('Error fetching data:', error);
 
     });
+}
+
+function callAmazon(title)
+{
+    console.log(title); 
+    let url = "https://www.amazon.com/s?k=" +title;
+
+    window.open(url, '_blank'); 
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
