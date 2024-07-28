@@ -23,7 +23,7 @@ function loadEvents() {
             const timeDiv = document.createElement('div');
             timeDiv.className = 'time';
             timeDiv.innerHTML = `
-                <h2>${new Date(event.Date).getDate()} <br><span>${new Date(event.Date).toLocaleString('default', { month: 'long' })}</span></h2>
+                <h2 style="color:#ECF0F1;">${new Date(event.Date).getDate()} <br><span>${new Date(event.Date).toLocaleString('default', { month: 'long' })}</span></h2>
             `;
 
             const detailsDiv = document.createElement('div');

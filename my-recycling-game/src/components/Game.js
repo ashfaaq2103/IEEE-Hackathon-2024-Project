@@ -57,8 +57,8 @@ const Game = () => {
         <div className="rules">
           <div className="rulesCont">
             <h1>Good Job!</h1>
-            <p>This has been a CSS-only experiment</p>
-            <p>Just for fun, by Cassie Evans</p>
+            <p>Let's Keep it like that</p>
+            <p>GO GREEN</p>
           </div>
         </div>
       </div>
@@ -71,6 +71,9 @@ const Game = () => {
               type="checkbox"
               className="goodObject object"
               onChange={() => handleScoreChange(2)}
+              style={{
+                animationDuration: `${Math.random() * 2 + 1}s`
+              }}
             />
           ))}
         </div>
@@ -82,13 +85,21 @@ const Game = () => {
               type="checkbox"
               className="badObject object"
               onChange={() => handleScoreChange(-1)}
+              style={{
+                animationDuration: `${Math.random() * 2 + 1}s`
+              }}
             />
           ))}
         </div>
-        <h3 className="score">{score}</h3>
+
+        {/* Adjusted score positioning */}
+        <div className="scoreContainer">
+          <h3 className="score">{score}</h3>
+        </div>
         <div className="countdownBar"></div>
       </div>
     </div>
+
   );
 };
 
