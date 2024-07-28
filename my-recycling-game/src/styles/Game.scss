@@ -13,16 +13,6 @@ body, .game {
   counter-reset: game;
 }
 
-.startScreen, .endScreen {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-image: url(https://res.cloudinary.com/dilgjzsjl/image/upload/f_auto,q_auto:best/v1516981596/hcc/bg/1.png);
-}
 
 .rules {
   width: auto;
