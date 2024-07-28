@@ -6,7 +6,7 @@ const Game = () => {
   const [score, setScore] = useState(0);
 
   const handleScoreChange = (points) => {
-    setScore(score + points);
+    setScore(prevScore => prevScore + points);
   };
 
   return (
