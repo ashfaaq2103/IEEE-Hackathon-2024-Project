@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bhai's Chatbot</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400&family=Finger+Paint&display=swap">
+</head>
+
+<body>
+    <div id="header_container"></div>
+    <div class="card">
+        <div id="header">
+            <h1>Sov Nou Zil</h1>
+        </div>
+        <div id="message-section">
+            <div class="message" id="bot"><span id="bot-response">I am here to help you know more about SDGs</span></div>
+        </div>
+        <div id="input-section">
+            <input id="input" type="text" placeholder="Type a message" autocomplete="off" autofocus="autofocus"/>
+            <button class="send" onclick="sendMessage()">
+                <div class="circle"><i class="zmdi zmdi-mail-send"></i></div>
+            </button>
+            <button class="micro" id="microphone-button" onmouseover="startRecognition()" onmouseout="stopRecognition()">
+                <img src="./Assets/mic.png" alt="">
+            </button>
+        </div>
+    </div>
+    <div id="footer_container"></div>
+
+ 
+    <script src="./JS/sdg_return.js"></script>
+    <script src="./JS/loader.js"></script>
+    <script src="./JS/common.js"></script>
+    <script src="./JS/load _header_and_footer.js"></script>
+    <script src="./JS/pwa_service.js"></script>
+    <script src="./JS/chatbot.js"></script>
+
+</body>
+</html>
