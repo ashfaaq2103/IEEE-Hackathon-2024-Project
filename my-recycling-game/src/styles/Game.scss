@@ -44,6 +44,8 @@ body, .game {
   appearance: none;
   animation-name: falling;
   animation-timing-function: linear;
+  animation-duration: 3s; /* Duration of the animation */
+  animation-iteration-count: infinite; /* Make the animation loop infinitely */
 }
 
 .goodObject {

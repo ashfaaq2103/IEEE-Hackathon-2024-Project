@@ -64,27 +64,33 @@ const Game = () => {
       </div>
 
       <div className="gameContainer">
-        <div id="goodObjects">
-          {Array.from({ length: 10 }, (_, index) => (
-            <input
-              key={index}
-              type="checkbox"
-              className="goodObject object"
-              onChange={() => handleScoreChange(2)}
-            />
-          ))}
-        </div>
+      <div id="goodObjects">
+        {Array.from({ length: 10 }, (_, index) => (
+          <input
+            key={index}
+            type="checkbox"
+            className="goodObject object"
+            onChange={() => handleScoreChange(2)}
+            style={{
+              animationDuration: `${Math.random() * 2 + 1}s`
+            }}
+          />
+        ))}
+      </div>
 
-        <div id="badObjects">
-          {Array.from({ length: 10 }, (_, index) => (
-            <input
-              key={index}
-              type="checkbox"
-              className="badObject object"
-              onChange={() => handleScoreChange(-1)}
-            />
-          ))}
-        </div>
+      <div id="badObjects">
+        {Array.from({ length: 10 }, (_, index) => (
+          <input
+            key={index}
+            type="checkbox"
+            className="badObject object"
+            onChange={() => handleScoreChange(-1)}
+            style={{
+              animationDuration: `${Math.random() * 2 + 1}s`
+            }}
+          />
+        ))}
+      </div>
         <h3 className="score">{score}</h3>
         <div className="countdownBar"></div>
       </div>
