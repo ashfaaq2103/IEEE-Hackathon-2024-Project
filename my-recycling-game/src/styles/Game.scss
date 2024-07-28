@@ -92,16 +92,18 @@ body, .game {
   }
 }
 
-.score {
+.scoreContainer {
   position: absolute;
-  top: 10vh;
-  width: 100%;
-  text-align: center;
-  font-size: 50vh;
-  color: #f0f8ff24;
-  z-index: 2;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
+.score {
+  font-size: 24px;
+  color: #f80000;
+}
 .countdownBar {
   position: absolute;
   width: 100%;

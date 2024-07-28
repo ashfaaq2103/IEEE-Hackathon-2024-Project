@@ -57,8 +57,7 @@ const Game = () => {
         <div className="rules">
           <div className="rulesCont">
             <h1>Good Job!</h1>
-            <p>Let's Keep it like that</p>
-            <p>GO GREEN</p>
+            <p>Let's Go Green</p>
           </div>
         </div>
       </div>
@@ -94,7 +93,7 @@ const Game = () => {
 
         {/* Adjusted score positioning */}
         <div className="scoreContainer">
-          <h3 className="score">{score}</h3>
+          <h3 className="score">Score is {score}</h3>
         </div>
         <div className="countdownBar"></div>
       </div>
